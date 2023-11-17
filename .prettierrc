@@ -1,0 +1,10 @@
+{
+  "parser": "babel",
+  "singleQuote": true,
+  "trailingComma": "all",
+  "bracketSameLine": true,
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "semi": true,
+  "tabWidth": 2
+}
