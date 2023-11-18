@@ -9,7 +9,7 @@ import {
 
 const animations = [
   { icon: '🌊', title: 'Phone ring indicator wave', name: 'RingWave' },
-  { icon: '🚀', title: 'Launch Animation' },
+  { icon: '🚀', title: 'Carousel FlatList using Animated.API' },
   { icon: '💡', title: 'Idea Animation' },
   { icon: '🌈', title: 'Colorful Spectrum Animation' },
   { icon: '🔮', title: 'Mystical Animation' },
