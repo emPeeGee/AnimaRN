@@ -3,6 +3,7 @@ import { backgroundColorGrouped } from './theme';
 import { NavigationContainer } from '@react-navigation/native';
 import { AnimationList } from './components/AnimationList';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { RingWave } from './components/RingWave';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +30,7 @@ export default function App() {
       <SafeAreaView style={styles.container}>
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={AnimationList} />
+          <Stack.Screen name="RingWave" component={RingWave} />
           <Stack.Screen name="Details" component={DetailsScreen} />
         </Stack.Navigator>
       </SafeAreaView>

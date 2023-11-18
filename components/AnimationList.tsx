@@ -8,7 +8,7 @@ import {
 } from '../theme';
 
 const animations = [
-  { icon: '🎉', title: 'Celebration Animation' },
+  { icon: '🌊', title: 'Phone ring indicator wave', name: 'RingWave' },
   { icon: '🚀', title: 'Launch Animation' },
   { icon: '💡', title: 'Idea Animation' },
   { icon: '🌈', title: 'Colorful Spectrum Animation' },
@@ -41,7 +41,7 @@ export function AnimationList({ navigation }) {
       }}
       renderItem={({ item, index }) => {
         return (
-          <Pressable onPress={() => navigation.navigate('Details')}>
+          <Pressable onPress={() => navigation.navigate(item.name)}>
             <View
               style={[
                 styles.itemContainer,
