@@ -1,64 +1,38 @@
-import { Button, FlatList, Pressable, SafeAreaView } from 'react-native';
-import { StyleSheet, Text, View } from 'react-native';
-import {
-  backgroundColorGrouped,
-  fontColor,
-  separatorColor,
-  backgroundColorPlain,
-} from './theme';
+import { Text, SafeAreaView, View, Button, StyleSheet } from 'react-native';
+import { backgroundColorGrouped } from './theme';
+import { NavigationContainer } from '@react-navigation/native';
+import { AnimationList } from './components/AnimationList';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const animations = [
-  { icon: '🎉', title: 'Celebration Animation' },
-  { icon: '🚀', title: 'Launch Animation' },
-  { icon: '💡', title: 'Idea Animation' },
-  { icon: '🌈', title: 'Colorful Spectrum Animation' },
-  { icon: '🔮', title: 'Mystical Animation' },
-  { icon: '🎥', title: 'Cinematic Animation' },
-];
+const Stack = createNativeStackNavigator();
 
-// TODO: add navigation
-// todo: utils
-const isLast = (array: unknown[], index: number) => index === array.length - 1;
+function DetailsScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Details Screen</Text>
+      <Button
+        title="Go to Details... again"
+        onPress={() => navigation.push('Details')}
+      />
+      <Button title="Go back" onPress={() => navigation.goBack()} />
+      <Button
+        title="Go back to first screen in stack"
+        onPress={() => navigation.popToTop()}
+      />
+    </View>
+  );
+}
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={animations}
-        style={styles.list}
-        horizontal={false}
-        contentContainerStyle={styles.listContent}
-        ListHeaderComponent={() => {
-          return (
-            // TODO: heading becomes smaller when scrolling as on ios
-            <View style={styles.heading}>
-              <Text style={styles.titleText}>Animations</Text>
-              <Text style={styles.description}>
-                Explore enchanting animations for a delightful mobile
-                experience, from subtle transitions to lively celebrations.
-              </Text>
-            </View>
-          );
-        }}
-        renderItem={({ item, index }) => {
-          return (
-            <Pressable>
-              <View
-                style={[
-                  styles.itemContainer,
-                  isLast(animations, index) && styles.lastItem,
-                ]}>
-                <Text>{item.icon}</Text>
-                <View style={styles.itemTitleContainer}>
-                  <Text style={styles.itemTitle}>{item.title}</Text>
-                </View>
-                <Button title="→" />
-              </View>
-            </Pressable>
-          );
-        }}
-      />
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView style={styles.container}>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={AnimationList} />
+          <Stack.Screen name="Details" component={DetailsScreen} />
+        </Stack.Navigator>
+      </SafeAreaView>
+    </NavigationContainer>
   );
 }
 
@@ -67,58 +41,5 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: backgroundColorGrouped,
     justifyContent: 'center',
-  },
-  heading: {
-    paddingHorizontal: 12,
-    paddingTop: 48,
-    paddingBottom: 8,
-    backgroundColor: backgroundColorGrouped,
-    borderBottomWidth: 1,
-    borderBottomColor: separatorColor,
-  },
-  description: {
-    color: fontColor,
-  },
-  titleText: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    textAlign: 'left',
-    marginBottom: 4,
-    color: fontColor,
-  },
-  listContent: {
-    borderWidth: 1,
-    borderTopWidth: 0,
-    borderColor: separatorColor,
-    marginVertical: 12,
-    backgroundColor: backgroundColorPlain,
-  },
-  list: {
-    flex: 1,
-    width: '100%',
-    height: 'auto',
-  },
-  itemContainer: {
-    gap: 8,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    color: fontColor,
-    paddingHorizontal: 12,
-    paddingVertical: 4,
-    borderBottomWidth: 1,
-    borderColor: separatorColor,
-  },
-  itemTitleContainer: {
-    flex: 1,
-  },
-  itemTitle: {
-    color: fontColor,
-  },
-  itemArrow: {
-    padding: 0,
-  },
-  lastItem: {
-    borderBottomWidth: 0,
   },
 });
