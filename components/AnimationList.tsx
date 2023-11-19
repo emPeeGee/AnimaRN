@@ -13,7 +13,7 @@ const animations = [
   { icon: '💡', title: 'Color switcher animation by interpolating' },
   { icon: '🌈', title: 'Toast notification' },
   { icon: '🔮', title: 'Basic of RN gestures', name: 'BasicGestures' },
-  { icon: '🎥', title: 'Cinematic Animation' },
+  { icon: '🎥', title: 'Zoom and Drag', name: 'ZoonAndDrag' },
 ];
 
 // todo: utils

@@ -8,6 +8,7 @@ import { CarouselFlat } from './components/CarouselFlatList';
 import { ColorSwitcher } from './components/ColorSwitcher';
 import ToastNotification from './components/ToastNotification';
 import BasicGestures from './components/BasicGestures';
+import { ZoomAndDrag } from './components/ZoomAndDrag';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,7 +33,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <SafeAreaView style={styles.container}>
-        <Stack.Navigator initialRouteName="Home">
+        <Stack.Navigator initialRouteName="ZoomAndDrag">
           <Stack.Screen name="Home" component={AnimationList} />
           <Stack.Screen name="RingWave" component={RingWave} />
           <Stack.Screen name="FlatListCarousel" component={CarouselFlat} />
@@ -42,6 +43,7 @@ export default function App() {
             component={ToastNotification}
           />
           <Stack.Screen name="BasicGestures" component={BasicGestures} />
+          <Stack.Screen name="ZoomAndDrag" component={ZoomAndDrag} />
           <Stack.Screen name="Details" component={DetailsScreen} />
         </Stack.Navigator>
       </SafeAreaView>
