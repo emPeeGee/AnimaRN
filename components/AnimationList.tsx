@@ -10,13 +10,13 @@ import {
 const animations = [
   { icon: '🌊', title: 'Phone ring indicator wave', name: 'RingWave' },
   { icon: '🚀', title: 'Carousel FlatList using Animated.API' },
-  { icon: '💡', title: 'Idea Animation' },
+  { icon: '💡', title: 'Color switcher animation by interpolating' },
+
   { icon: '🌈', title: 'Colorful Spectrum Animation' },
   { icon: '🔮', title: 'Mystical Animation' },
   { icon: '🎥', title: 'Cinematic Animation' },
 ];
 
-// TODO: add navigation
 // todo: utils
 const isLast = (array: unknown[], index: number) => index === array.length - 1;
 

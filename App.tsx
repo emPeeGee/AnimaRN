@@ -5,6 +5,7 @@ import { AnimationList } from './components/AnimationList';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RingWave } from './components/RingWave';
 import { CarouselFlat } from './components/CarouselFlatList';
+import { ColorSwitcher } from './components/ColorSwitcher';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,10 +30,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <SafeAreaView style={styles.container}>
-        <Stack.Navigator initialRouteName="FlatListCarousel">
+        <Stack.Navigator initialRouteName="ColorSwitcher">
           <Stack.Screen name="Home" component={AnimationList} />
           <Stack.Screen name="RingWave" component={RingWave} />
           <Stack.Screen name="FlatListCarousel" component={CarouselFlat} />
+          <Stack.Screen name="ColorSwitcher" component={ColorSwitcher} />
           <Stack.Screen name="Details" component={DetailsScreen} />
         </Stack.Navigator>
       </SafeAreaView>
