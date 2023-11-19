@@ -9,6 +9,7 @@ import { ColorSwitcher } from './components/ColorSwitcher';
 import ToastNotification from './components/ToastNotification';
 import BasicGestures from './components/BasicGestures';
 import { ZoomAndDrag } from './components/ZoomAndDrag';
+import { TwitterProfile } from './components/TwitterProfile';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,7 +34,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <SafeAreaView style={styles.container}>
-        <Stack.Navigator initialRouteName="ZoomAndDrag">
+        <Stack.Navigator initialRouteName="TwitterProfile">
           <Stack.Screen name="Home" component={AnimationList} />
           <Stack.Screen name="RingWave" component={RingWave} />
           <Stack.Screen name="FlatListCarousel" component={CarouselFlat} />
@@ -44,6 +45,7 @@ export default function App() {
           />
           <Stack.Screen name="BasicGestures" component={BasicGestures} />
           <Stack.Screen name="ZoomAndDrag" component={ZoomAndDrag} />
+          <Stack.Screen name="TwitterProfile" component={TwitterProfile} />
           <Stack.Screen name="Details" component={DetailsScreen} />
         </Stack.Navigator>
       </SafeAreaView>

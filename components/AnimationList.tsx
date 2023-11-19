@@ -14,6 +14,9 @@ const animations = [
   { icon: '🌈', title: 'Toast notification' },
   { icon: '🔮', title: 'Basic of RN gestures', name: 'BasicGestures' },
   { icon: '🎥', title: 'Zoom and Drag', name: 'ZoonAndDrag' },
+  { icon: '🦜', title: 'Twitter Profile', name: 'TwitterProfile' },
+  // TODO: next 3 circles animation
+  { icon: '🦜', title: 'Twitter Profile', name: 'TwitterProfile' },
 ];
 
 // todo: utils
