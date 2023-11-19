@@ -11,8 +11,8 @@ const animations = [
   { icon: '🌊', title: 'Phone ring indicator wave', name: 'RingWave' },
   { icon: '🚀', title: 'Carousel FlatList using Animated.API' },
   { icon: '💡', title: 'Color switcher animation by interpolating' },
+  { icon: '🌈', title: 'Toast notification' },
 
-  { icon: '🌈', title: 'Colorful Spectrum Animation' },
   { icon: '🔮', title: 'Mystical Animation' },
   { icon: '🎥', title: 'Cinematic Animation' },
 ];
