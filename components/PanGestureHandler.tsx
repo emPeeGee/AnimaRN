@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet,  View, Dimensions } from 'react-native';
 import React from 'react';
 import Animated, {
   useAnimatedGestureHandler,
@@ -12,8 +12,9 @@ import {
   PanGestureHandlerGestureEvent,
 } from 'react-native-gesture-handler';
 
+const wWidth = Dimensions.get('window').width
 const SIZE = 100.0;
-const CIRCLE_RADIUS = SIZE * 2;
+const CIRCLE_RADIUS = wWidth * 0.9 / 2;
 
 type ContextType = {
   translateX: number
