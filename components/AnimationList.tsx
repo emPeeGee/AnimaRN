@@ -6,44 +6,12 @@ import {
   separatorColor,
   backgroundColorPlain,
 } from '../theme';
-
-const animations = [
-  {
-    icon: '🌊',
-    title: 'Phone ring indicator wave (Moti & Reanimated)',
-    name: 'RingWave',
-  },
-  { icon: '🚀', title: 'Carousel FlatList (Animated)' },
-  {
-    icon: '💡',
-    title: 'Color switcher animation by interpolating (Reanimated)',
-  },
-  { icon: '🌈', title: 'Toast notification (Animated)' },
-  {
-    icon: '🔮',
-    title: 'Basic of RN gestures (Animated)',
-    name: 'BasicGestures',
-  },
-  { icon: '🎥', title: 'Zoom and Drag (Animated)', name: 'ZoonAndDrag' },
-  { icon: '🦜', title: 'Twitter Profile (Animated)', name: 'TwitterProfile' },
-  {
-    icon: '🧪',
-    title: 'Twitter Profile2 (Testing Animated.Event) (Animated)',
-    name: 'TwitterProfile2',
-  },
-  {
-    icon: '️🥘',
-    title: 'PanGestureHandler (Reanimated)',
-    name: 'PanGestureHand',
-  },
-  // TODO: next 3 circles animation
-  { icon: '⚽️', title: '3 loading circles', name: 'LoadingCircles' },
-];
+import { ANIMATIONS } from '../animations';
 
 // todo: utils
 const isLast = (array: unknown[], index: number) => index === array.length - 1;
 
-export function AnimationList({ navigation }) {
+export function AnimationList({ animations = ANIMATIONS, navigation }) {
   return (
     <FlatList
       data={animations}
