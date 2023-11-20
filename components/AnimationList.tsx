@@ -15,8 +15,13 @@ const animations = [
   { icon: '🔮', title: 'Basic of RN gestures', name: 'BasicGestures' },
   { icon: '🎥', title: 'Zoom and Drag', name: 'ZoonAndDrag' },
   { icon: '🦜', title: 'Twitter Profile', name: 'TwitterProfile' },
+  {
+    icon: '🦜',
+    title: 'Twitter Profile2 (Testing Animated.Event)',
+    name: 'TwitterProfile2',
+  },
   // TODO: next 3 circles animation
-  { icon: '🦜', title: 'Twitter Profile', name: 'TwitterProfile' },
+  { icon: '🦜', title: '3 loading circles', name: 'LoadingCircles' },
 ];
 
 // todo: utils
