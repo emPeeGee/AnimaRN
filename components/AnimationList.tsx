@@ -31,6 +31,11 @@ const animations = [
     title: 'Twitter Profile2 (Testing Animated.Event) (Animated)',
     name: 'TwitterProfile2',
   },
+  {
+    icon: '️🥘',
+    title: 'PanGestureHandler (Reanimated)',
+    name: 'PanGestureHand',
+  },
   // TODO: next 3 circles animation
   { icon: '⚽️', title: '3 loading circles', name: 'LoadingCircles' },
 ];

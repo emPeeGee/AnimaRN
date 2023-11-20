@@ -28,6 +28,7 @@ export const ZoomAndDrag = () => {
           pan.setValue({ x: gestureState.dx, y: gestureState.dy });
         } else if (activeTouches >= 2) {
           const [touchA, touchB] = evt.nativeEvent.changedTouches;
+          // Distance between two finders
           const distance = pointsDistance(
             [touchA.pageX, touchA.pageY],
             [touchB.pageX, touchB.pageY],

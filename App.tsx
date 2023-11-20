@@ -11,6 +11,7 @@ import BasicGestures from './components/BasicGestures';
 import { ZoomAndDrag } from './components/ZoomAndDrag';
 import { TwitterProfile } from './components/TwitterProfile';
 import { TwitterProfile2 } from './components/TwitterProfile2';
+import { PanGestureHand } from './components/PanGestureHandler';
 
 const Stack = createNativeStackNavigator();
 
@@ -48,6 +49,7 @@ export default function App() {
           <Stack.Screen name="ZoomAndDrag" component={ZoomAndDrag} />
           <Stack.Screen name="TwitterProfile" component={TwitterProfile} />
           <Stack.Screen name="TwitterProfile2" component={TwitterProfile2} />
+          <Stack.Screen name="PanGestureHand" component={PanGestureHand} />
           <Stack.Screen name="Details" component={DetailsScreen} />
         </Stack.Navigator>
       </SafeAreaView>
