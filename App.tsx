@@ -35,7 +35,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <SafeAreaView style={styles.container}>
-        <Stack.Navigator initialRouteName="TwitterProfile2">
+        <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={AnimationList} />
           <Stack.Screen name="RingWave" component={RingWave} />
           <Stack.Screen name="FlatListCarousel" component={CarouselFlat} />

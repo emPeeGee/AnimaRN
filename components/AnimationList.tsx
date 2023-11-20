@@ -8,20 +8,31 @@ import {
 } from '../theme';
 
 const animations = [
-  { icon: '🌊', title: 'Phone ring indicator wave', name: 'RingWave' },
-  { icon: '🚀', title: 'Carousel FlatList using Animated.API' },
-  { icon: '💡', title: 'Color switcher animation by interpolating' },
-  { icon: '🌈', title: 'Toast notification' },
-  { icon: '🔮', title: 'Basic of RN gestures', name: 'BasicGestures' },
-  { icon: '🎥', title: 'Zoom and Drag', name: 'ZoonAndDrag' },
-  { icon: '🦜', title: 'Twitter Profile', name: 'TwitterProfile' },
   {
-    icon: '🦜',
-    title: 'Twitter Profile2 (Testing Animated.Event)',
+    icon: '🌊',
+    title: 'Phone ring indicator wave (Moti & Reanimated)',
+    name: 'RingWave',
+  },
+  { icon: '🚀', title: 'Carousel FlatList (Animated)' },
+  {
+    icon: '💡',
+    title: 'Color switcher animation by interpolating (Reanimated)',
+  },
+  { icon: '🌈', title: 'Toast notification (Animated)' },
+  {
+    icon: '🔮',
+    title: 'Basic of RN gestures (Animated)',
+    name: 'BasicGestures',
+  },
+  { icon: '🎥', title: 'Zoom and Drag (Animated)', name: 'ZoonAndDrag' },
+  { icon: '🦜', title: 'Twitter Profile (Animated)', name: 'TwitterProfile' },
+  {
+    icon: '🧪',
+    title: 'Twitter Profile2 (Testing Animated.Event) (Animated)',
     name: 'TwitterProfile2',
   },
   // TODO: next 3 circles animation
-  { icon: '🦜', title: '3 loading circles', name: 'LoadingCircles' },
+  { icon: '⚽️', title: '3 loading circles', name: 'LoadingCircles' },
 ];
 
 // todo: utils
