@@ -37,4 +37,5 @@ export const ANIMATIONS = [
     name: 'PanGestureHand',
   },
   { icon: '⚽️', title: '3 loading circles', name: 'ThreeCircles' },
+  { icon: '🦢', title: 'ScrollView Interpolate', name: 'ScrollViewInter' },
 ];

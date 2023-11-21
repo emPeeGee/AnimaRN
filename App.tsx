@@ -13,6 +13,7 @@ import { TwitterProfile } from './components/TwitterProfile';
 import { TwitterProfile2 } from './components/TwitterProfile2';
 import { PanGestureHand } from './components/PanGestureHandler';
 import ThreeCircles from './components/ThreeCircles';
+import { ScrollViewInter } from './components/ScrollViewInter';
 
 const Stack = createNativeStackNavigator();
 
@@ -37,7 +38,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <SafeAreaView style={styles.container}>
-        <Stack.Navigator initialRouteName="Home">
+        <Stack.Navigator initialRouteName="ScrollViewInter">
           <Stack.Screen name="Home" component={AnimationList} />
           <Stack.Screen name="RingWave" component={RingWave} />
           <Stack.Screen name="FlatListCarousel" component={CarouselFlat} />
@@ -52,6 +53,7 @@ export default function App() {
           <Stack.Screen name="TwitterProfile2" component={TwitterProfile2} />
           <Stack.Screen name="PanGestureHand" component={PanGestureHand} />
           <Stack.Screen name="ThreeCircles" component={ThreeCircles} />
+          <Stack.Screen name="ScrollViewInter" component={ScrollViewInter} />
           <Stack.Screen name="Details" component={DetailsScreen} />
         </Stack.Navigator>
       </SafeAreaView>
