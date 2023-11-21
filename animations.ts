@@ -36,6 +36,5 @@ export const ANIMATIONS = [
     title: 'PanGestureHandler (Reanimated)',
     name: 'PanGestureHand',
   },
-  // TODO: next 3 circles animation
-  { icon: '⚽️', title: '3 loading circles', name: '' },
+  { icon: '⚽️', title: '3 loading circles', name: 'ThreeCircles' },
 ];

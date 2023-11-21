@@ -23,8 +23,6 @@ type ContextType = {
 
 export const PanGestureHand = () => {
   const translateX = useSharedValue(0);
-
-
   const translateY = useSharedValue(0);
 
   // TODO: wtf prettier is doing
