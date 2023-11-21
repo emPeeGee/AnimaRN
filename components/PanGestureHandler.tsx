@@ -23,13 +23,14 @@ type ContextType = {
 
 export const PanGestureHand = () => {
   const translateX = useSharedValue(0);
+
+
   const translateY = useSharedValue(0);
 
   // TODO: wtf prettier is doing
-  // prettier-ignore
   const panGestureEvent = useAnimatedGestureHandler<PanGestureHandlerGestureEvent, ContextType>({
     onStart: (evt, ctx) => {
-      ctx.translateX = translateX.value;
+          ctx.translateX = translateX.value;
       ctx.translateY = translateY.value;
     },
     onActive: (evt, ctx) => {
@@ -58,15 +59,16 @@ export const PanGestureHand = () => {
   });
 
   return (
-    <View style={styles.container}>
-      <GestureHandlerRootView>
+      //  INFO: On Android gesture handler shouldn't be wrapper in view. Below code won't work
+      // <View style={styles.container}>
+      // <GestureHandlerRootView> 
+      <GestureHandlerRootView style={styles.container}>
         <View style={styles.circle}>
           <PanGestureHandler onGestureEvent={panGestureEvent}>
             <Animated.View style={[styles.square, rStyle]}></Animated.View>
           </PanGestureHandler>
-        </View>
+          </View>
       </GestureHandlerRootView>
-    </View>
   );
 };
 
