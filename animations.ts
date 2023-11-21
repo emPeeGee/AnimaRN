@@ -38,4 +38,5 @@ export const ANIMATIONS = [
   },
   { icon: '⚽️', title: '3 loading circles', name: 'ThreeCircles' },
   { icon: '🦢', title: 'ScrollView Interpolate', name: 'ScrollViewInter' },
+  { icon: '🐲', title: 'Progress Bar', name: 'ProgressBar' },
 ];
