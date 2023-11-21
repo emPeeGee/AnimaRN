@@ -1,4 +1,12 @@
-import { Text, SafeAreaView, View, Button, StyleSheet } from 'react-native';
+import {
+  Text,
+  SafeAreaView,
+  View,
+  Button,
+  StyleSheet,
+  StatusBar,
+  Platform,
+} from 'react-native';
 import { backgroundColorGrouped } from './theme';
 import { NavigationContainer } from '@react-navigation/native';
 import { AnimationList } from './components/AnimationList';

@@ -1,4 +1,11 @@
-import { Button, FlatList, Pressable, SafeAreaView } from 'react-native';
+import {
+  Button,
+  FlatList,
+  Platform,
+  Pressable,
+  SafeAreaView,
+  SectionList,
+} from 'react-native';
 import { StyleSheet, Text, View } from 'react-native';
 import {
   backgroundColorGrouped,
@@ -7,15 +14,20 @@ import {
   backgroundColorPlain,
 } from '../theme';
 import { ANIMATIONS } from '../animations';
+import { Feather } from '@expo/vector-icons';
 
 // todo: utils
 const isLast = (array: unknown[], index: number) => index === array.length - 1;
+const isSingle = (array: unknown[]) => array.length === 1;
+const isEmpty = (array: unknown[]) => array.length === 0;
 
 export function AnimationList({ animations = ANIMATIONS, navigation }) {
   return (
-    <FlatList
-      data={animations}
+    <SectionList
+      sections={animations}
       style={styles.list}
+      ListFooterComponentStyle={styles.footer}
+      ListFooterComponent={() => <View />}
       horizontal={false}
       contentContainerStyle={styles.listContent}
       ListHeaderComponent={() => {
@@ -30,19 +42,31 @@ export function AnimationList({ animations = ANIMATIONS, navigation }) {
           </View>
         );
       }}
-      renderItem={({ item, index }) => {
+      renderSectionHeader={({ section: { title } }) => (
+        <Text style={styles.sectionHeading}>{title}</Text>
+      )}
+      renderItem={({ item, index, section }) => {
         return (
           <Pressable onPress={() => navigation.navigate(item.name)}>
             <View
               style={[
                 styles.itemContainer,
-                isLast(animations, index) && styles.lastItem,
+                // if item is the last and not single
+                isLast(section.data, index) &&
+                  !isSingle(section.data) &&
+                  styles.lastItem,
               ]}>
               <Text>{item.icon}</Text>
               <View style={styles.itemTitleContainer}>
-                <Text style={styles.itemTitle}>{item.title}</Text>
+                <Text numberOfLines={1} style={styles.itemTitle}>
+                  {item.title}
+                </Text>
               </View>
-              <Button title="→" />
+              {Platform.OS === 'ios' ? (
+                <Button title="→" />
+              ) : (
+                <Feather name="arrow-right" />
+              )}
             </View>
           </Pressable>
         );
@@ -56,6 +80,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingTop: 48,
     paddingBottom: 8,
+    backgroundColor: backgroundColorGrouped,
+    // borderBottomWidth: 1,
+    // borderBottomColor: separatorColor,
+  },
+  sectionHeading: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    paddingHorizontal: 12,
+    paddingVertical: 12,
     backgroundColor: backgroundColorGrouped,
     borderBottomWidth: 1,
     borderBottomColor: separatorColor,
@@ -74,13 +107,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderTopWidth: 0,
     borderColor: separatorColor,
-    marginVertical: 12,
+    // marginVertical: 12, // INFO: On Android looks weird with it
     backgroundColor: backgroundColorPlain,
   },
   list: {
     flex: 1,
-    width: '100%',
-    height: 'auto',
   },
   itemContainer: {
     gap: 8,
@@ -89,7 +120,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     color: fontColor,
     paddingHorizontal: 12,
-    paddingVertical: 4,
+    paddingVertical: 8,
     borderBottomWidth: 1,
     borderColor: separatorColor,
   },
@@ -104,5 +135,9 @@ const styles = StyleSheet.create({
   },
   lastItem: {
     borderBottomWidth: 0,
+  },
+  footer: {
+    paddingVertical: 8,
+    backgroundColor: backgroundColorGrouped,
   },
 });
