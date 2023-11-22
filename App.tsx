@@ -15,6 +15,7 @@ import { PanGestureHand } from './components/PanGestureHandler';
 import ThreeCircles from './components/ThreeCircles';
 import { ScrollViewInter } from './components/ScrollViewInter';
 import { ProgressBar } from './components/ProgressBar';
+import { ClockLoader } from './components/ClockLoader';
 
 const Stack = createNativeStackNavigator();
 
@@ -56,6 +57,7 @@ export default function App() {
           <Stack.Screen name="ThreeCircles" component={ThreeCircles} />
           <Stack.Screen name="ScrollViewInter" component={ScrollViewInter} />
           <Stack.Screen name="ProgressBar" component={ProgressBar} />
+          <Stack.Screen name="ClockLoader" component={ClockLoader} />
           <Stack.Screen name="Details" component={DetailsScreen} />
         </Stack.Navigator>
       </SafeAreaView>
