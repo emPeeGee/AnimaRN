@@ -24,6 +24,7 @@ import ThreeCircles from './components/ThreeCircles';
 import { ScrollViewInter } from './components/ScrollViewInter';
 import { ProgressBar } from './components/ProgressBar';
 import { ClockLoader } from './components/ClockLoader';
+import { RippleEffect } from './components/RippleEffect';
 
 const Stack = createNativeStackNavigator();
 
@@ -48,7 +49,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <SafeAreaView style={styles.container}>
-        <Stack.Navigator initialRouteName="Home">
+        <Stack.Navigator initialRouteName="RippleEffect">
           <Stack.Screen name="Home" component={AnimationList} />
           <Stack.Screen name="RingWave" component={RingWave} />
           <Stack.Screen name="FlatListCarousel" component={CarouselFlat} />
@@ -66,6 +67,7 @@ export default function App() {
           <Stack.Screen name="ScrollViewInter" component={ScrollViewInter} />
           <Stack.Screen name="ProgressBar" component={ProgressBar} />
           <Stack.Screen name="ClockLoader" component={ClockLoader} />
+          <Stack.Screen name="RippleEffect" component={RippleEffect} />
           <Stack.Screen name="Details" component={DetailsScreen} />
         </Stack.Navigator>
       </SafeAreaView>

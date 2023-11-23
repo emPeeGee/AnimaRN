@@ -57,6 +57,7 @@ export const ANIMATIONS = [
       { icon: '🦢', title: 'ScrollView Interpolate', name: 'ScrollViewInter' },
       { icon: '🐲', title: 'Progress Bar', name: 'ProgressBar' },
       { icon: '🕥', title: 'Clock Loader', name: 'ClockLoader' },
+      { icon: '🧶', title: 'Ripple effect', name: 'RippleEffect' },
     ],
   },
 ];
