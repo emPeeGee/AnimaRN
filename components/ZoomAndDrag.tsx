@@ -35,7 +35,7 @@ export const ZoomAndDrag = () => {
           );
 
           const screenMovedPercents = distance / dimensions.width;
-          const newScale = 1 + screenMovedPercents * 3;
+          const newScale = 0.00001 + screenMovedPercents * 3;
           // TODO: on first scale, it jumps
           scale.setValue(newScale);
         }

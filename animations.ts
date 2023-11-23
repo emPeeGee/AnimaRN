@@ -17,7 +17,7 @@ export const ANIMATIONS = [
         title: 'Basic of RN gestures',
         name: 'BasicGestures',
       },
-      { icon: '🎥', title: 'Zoom and Drag', name: 'ZoonAndDrag' },
+      { icon: '🎥', title: 'Zoom and Drag', name: 'ZoomAndDrag' },
       {
         icon: '🦜',
         title: 'Twitter Profile',
